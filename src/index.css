@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --font-allura: "Allura", cursive;
+   --font-chela: "Chela One", cursive;
+}
