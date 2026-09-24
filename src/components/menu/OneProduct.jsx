@@ -1,6 +1,7 @@
-
+import {useNavigate} from "react-router-dom"
 
 const OneProduct = ({ product }) => {
+  const navigate=useNavigate()
   return (
     <div className="w-72 text-center">
       <div className="relative flex justify-center">
@@ -24,9 +25,15 @@ const OneProduct = ({ product }) => {
           Rs {product.p_price}
         </h4>
 
-        <p className="text-sm text-slate-400 leading-6 mt-3">
+         <div>
+           <button
+           
+           onClick={()=>navigate(`/productdetails/${product._id}`)}
+           className="bg-green-400 p-2 text-sm rounded-xl m-1 cursor-pointer" >See More ...</button>          
+         </div>
+        {/* <p className="text-sm text-slate-400 leading-6 mt-3">
           {product.p_description}
-        </p>
+        </p> */}
       </div>
     </div>
   );
