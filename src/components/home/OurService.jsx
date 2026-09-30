@@ -23,7 +23,7 @@ const OurService=()=>{
             <p  className="text-sm text-black">Get the best food for <br></br>any occasions and gatherings</p>
         </div>
         </div>  
-        <Button buttonName="Explore Our Services"/>   
+        <Button buttonName="Explore Our Services" redirect="service"/>   
 
     </div>
 

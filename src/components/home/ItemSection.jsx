@@ -55,7 +55,7 @@ const ItemSection = ({ error, loading, product }) => {
       <div className="mx-auto  mt-12 max-w-6xl">
         <Item error={error} loading={loading} items={Items} />
       </div>
-      <Button  buttonName="Explore More Menu"/>
+      <Button  buttonName="Explore More Menu" redirect="menu"/>
     </div>
   );
 };

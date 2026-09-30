@@ -23,7 +23,7 @@ const HeroSection = () => {
           of momo available for you
         </p>
         <div className="mr-70">
-        <Button buttonName="Explore Food Menu" />
+        <Button buttonName="Explore Food Menu" redirect="menu" />
 
         </div>
       </div>

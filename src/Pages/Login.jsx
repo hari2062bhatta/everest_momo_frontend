@@ -19,10 +19,14 @@ const Login = () => {
             })
             console.log(response)
             if(response.data.success){
-                console.log(response.data.data)
               login(response.data.data)
-              //   toast.success("login successfull")
-              //   // navigate('/')
+                toast.success("login successfull")
+                if(response.data.data.role==="admin"){
+                  navigate('/admin/')
+                }
+                else{
+                  navigate('/')
+                }
             }
             else{
                 toast.error("invalid email or password")

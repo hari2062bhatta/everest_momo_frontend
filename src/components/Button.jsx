@@ -1,10 +1,12 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
-
-const Button = ({ buttonName, colorName }) => {
+import {useNavigate} from "react-router-dom"
+const Button = ({ buttonName, colorName,redirect }) => {
+  const navigate=useNavigate()
   return (
     <div className="mt-8 flex flex-col items-center justify-center">
       <button
 
+        onClick={()=>navigate(`/${redirect}`)}
       style={{
         backgroundColor:`${colorName}`
       }}
