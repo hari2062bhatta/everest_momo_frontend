@@ -77,6 +77,8 @@ const App = () => {
          <Route path="manage-users" element={<ManageUsers/>}/>
           {/* <Route path="admin" element={<Dashboard/>}></Route> */}
         </Route>
+
+        <Route path="*" element={<h1>page not found</h1>}></Route>
       </Routes>
     </div>
   );
