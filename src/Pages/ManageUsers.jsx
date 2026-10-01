@@ -16,7 +16,13 @@ const ManageUsers = () => {
   };
   const deleteUser = async (id) => {
     const response = await Api.delete(`/api/user/deleteuser/${id}`);
-    console.log(response);
+    if(response.data.success){
+      Swal.fire({
+        title:"Deleted ",
+        text:"user delted successfully",
+        icon :"success"
+      })
+    }
     getUser();
   };
 const changeUser=(e)=>{  
@@ -56,7 +62,10 @@ const updateUsers=async(e)=>{
   }, []);
 
   return (
-    <div className="flex justify-center mt-10 relative">
+   <div>
+    <h1 className="text-4xl my-4 ml-5 font-bold ">Our Customer</h1>
+     <div className="flex justify-center mt-10 relative">
+      
       
       {users?.length > 0 ? (
 
@@ -106,7 +115,12 @@ const updateUsers=async(e)=>{
 
             {
                 isUpdate &&<div className="border absolute top-10 w-80 bg-gray-300 flex flex-col gap-3 ">
-                    <h3 className="text-center">Update User information</h3>
+                  <div className="flex items-center justify-between">
+                     <h3 className="ml-4 font-bold font-2xl">Update User information</h3>
+                    <h3
+                    onClick={()=>{setIsUpdate(false)}} 
+                    className="text-end mr-1 text-2xl cursor-pointer text-red-500">x</h3>
+                  </div>
                     <form  
                     onSubmit={(e)=>
                     {
@@ -114,7 +128,7 @@ const updateUsers=async(e)=>{
                         setIsUpdate(false)
                     }
                     }
-                    className="h-80 justify-center p-1">
+                    className="h-70 justify-center p-1 ">
                         <label>UserName</label>
                         <input 
                         onChange={(e)=>changeUser(e)}
@@ -145,6 +159,7 @@ const updateUsers=async(e)=>{
             }
 
     </div>
+   </div>
   );
 };
 
